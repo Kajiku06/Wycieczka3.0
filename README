@@ -1,6 +1,6 @@
 OPIS APLIKACJI:
   - Aplikacja "Wycieczka" ma za zadanie wyboru zakresu wycieczki przez użytkownika.Po wyboru go sprawdza następujce zależnści:
-      - Zakres wycieczki jest możliwy maksymalnie do 2 lat w przód i nie możliwy do rozpoczeenica go w przyszłości przed dniem obecnem. 
+      - Zakres wycieczki jest możliwy maksymalnie do 2 lat w przód i nie możliwy do rozpoczeenica go w przeszłości przed dniem obecnem. 
         (Algorytm jest zapisany w pliku Date.kt w postaci klasy)
       - Dodatkowo liczy ilosc Dni zakresu wycieczki.
   - Aplikacja została napisana w języku Kotlin w IDE "Android Studio"
