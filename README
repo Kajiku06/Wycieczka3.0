@@ -1,12 +1,99 @@
-OPIS APLIKACJI:
-  - Aplikacja "Wycieczka" ma za zadanie wyboru zakresu wycieczki przez użytkownika.Po wyboru go sprawdza następujce zależnści:
-      - Zakres wycieczki jest możliwy maksymalnie do 2 lat w przód i nie możliwy do rozpoczeenica go w przeszłości przed dniem obecnem. 
-        (Algorytm jest zapisany w pliku Date.kt w postaci klasy)
-      - Dodatkowo liczy ilosc Dni zakresu wycieczki.
-  - Aplikacja została napisana w języku Kotlin w IDE "Android Studio"
-      
- DZIALANIE:
-  - Uruchamiając plik: "Wycieczka.apk" przechodzisz do menu, w którym możesz "Przejść do głownej aktywności aplikacji"(MainActivity.kt), której
-    opis jest zawarty w podpunkcie "Opisu Aplikacji". W Menu możesz Przejść do "Creditsów"
-  - Aplikacja Posiada również Top Menu, w którym masz możliwość zakończenia działania do aplikacji i przejścia do głównego menu.
-  
+ZADANIE APLIKACJI:
+  - Aplikacja "Wycieczka" ma za zadanie wyboru zakresu wycieczki przez użytkownika na kalendarzu.
+------------------------------------------------------------------------------------------------------------------------------------------------------------  
+ŚRODOWISKO i JĘZYK:
+  - Program napisany zostanie w IDE Android Studio w języku programowania "Kotlin".
+------------------------------------------------------------------------------------------------------------------------------------------------------------ 
+NIEZAWODNOŚĆ APLIKACJI:
+  - MENU z wyborem opcji 
+  - Górny panel z możliwością zamknięcia aplikacji i powrotu do MENU
+  - Usuwanie Danych po zamknięciu aplikacji 
+  - Zamkniecie Aplikacji powoduje wyłączenie wszystkich działających paneli
+------------------------------------------------------------------------------------------------------------------------------------------------------------ 
+RWD i WIZUALIZACJA PROJEKTU:
+  - Rozmiar aplikacji(szerokość/wysokość): match_parent
+  - Dwa motywy:
+  {
+  - Motyw "Dzienny":
+    * Layout:
+      - tło kolor: biały
+    * Przyciski:
+      - tło kolor: fioletowy
+      - kolor tekstu: biały
+      - rozmiar tekstu: 14sp
+      - layout weight: wrap_content
+      - layout height: wrap_content
+    * Etykiety:
+      - tło: przezroczyste
+      - kolor tekstu: czarny
+      - rozmiar tekstu: 14sp
+      - layout weight: wrap_content
+      - layout height: wrap_content 
+ - Motyw "Nocny":
+    * Layout:
+      - tło kolor: czarny
+    * Przyciski:
+      - tło kolor: fioletowy
+      - kolor tekstu: biały
+      - rozmiar tekstu: 14sp
+      - layout weight: wrap_content
+      - layout height: wrap_content
+    * Etykiety:
+      - tło: przezroczyste
+      - kolor tekstu: czarny
+      - rozmiar tekstu: 14sp
+      - layout weight: wrap_content
+      - layout height: wrap_content 
+   }
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+ZASOBY:
+  - Menu = plik .kt typu Activity zawierający Menu
+  - MainActivity =  plik .kt typu Activity zawierający Program
+  - Data = plik .kt typu Klasy zawierający algorytm poprawności Dat
+  - LayoutMenu = plik .xml typu Layout opisujący wygląd Activity Menu
+  - LayoutMainActivity = plik .xml typu Layout opisujący wygląd Activity MainActivity
+  - TopMenu = plik .xml typu LayoutMenu opisujący wygląd TopMenu
+------------------------------------------------------------------------------------------------------------------------------------------------------------  
+DZIALANIE i ALGORYTM:
+  - DZIAŁANIE I OPIS PIERWSZEGO PANELU(Menu):
+    -[START ACTIVITY]:
+     - Wczytuje plik Layout ("LayoutMenu"):
+      - LABEL: Menu
+      - BUTTON: "Zarezerwuj wyjazd"
+      - BUTTON: "Zamyka Aplikacje"
+     - Wczytuje plik TopMenu("TopMenu")
+      - ITEM: "Zamknij"{Zamyka aplikacje}
+      - ITEM" "Menu"{Powraca do MENU}   
+    -[FUNKCJE NASŁUCHUJĄCE]:
+     - Funkcja Przełączająca Panel działa po wciśnięciu przycisku "Zarezerwój Wyjazd"
+     - Funkcja Zamykania Aplikacji
+     
+  - DZIAŁANIE I OPIS PIERWSZEGO PANELU(MainActiyity):
+    -[START ACTIVITY]:
+     - Wczytuje plik Layout ("LayoutMainActivity")
+     - Wczytuje plik TopMenu("TopMenu")
+      - ITEM: "Zamknij"{Zamyka aplikacje}
+      - ITEM" "Menu"{Powraca do MENU}
+     - Wprowadza zmienną btn opisującą przycisk = "Wybierz Datę"
+     - Wprowadza zmienne opisujące Etykiety wyświetlające działania algorytmów 
+     - Wprowadza zmienną opisującą format pobieranej daty "dd/MM/yyyy"
+     - Wprowadza zmienną opisującą Kalendarz z zakresem "Data Picker", który pobiera 2 wartości wybrane przez USER'a(Date początkową i końcową)
+     - Wprowadza zmienną opisującą Plik Klasy "Data.kt"
+     - Przypisukję Obeną date do jednej z etykiet
+        
+    -[FUNKCJE NASŁUCHUJĄCE]:
+     - Funkcja Wybierajaca Datę za pomocą "Data Pickera"
+        {
+        - Po wybraniu daty wyświetla wybrany zakres w "Toast'cie"
+        - Przypisuje Daty do Etykiet
+        - Sprawdza za pomocą pliku klasy "Data" czy data jest legit za pomocą funkcji
+        - Wypisuje zwrócone wartości przez funkcje(True/False) - [Data nie może być z przeszłości i do 2 lat w przód]
+        - Wypisuje Ilość Dni Wyciecki
+        }   
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+TESTOWANIE:
+  - Aplikacja Przeszła przez wiele testetów. Niestety ich ilość nie była możliwa psychicznie do zapisania
+-------------------------------------------------------------------------------------------------------------------------------------------------------------  
+WERYFIKACJA:
+  - Aplikacja została oceniona na 6 za funkcijonowanie i 6- za intuicyjność w sklai ocen szkolnych
+-------------------------------------------------------------------------------------------------------------------------------------------------------------  
